@@ -30,7 +30,7 @@ const MainVisual = ({ data }) => {
               <img
                 src={urlFor(item.image)}
                 alt="headphones"
-                className="main-banner-image"
+                className="main-banner-image a"
               />
             </Link>
           </SwiperSlide>
