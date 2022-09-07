@@ -13,12 +13,6 @@ const ProductDetail = ({ product, products }) => {
   const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
   const [index, setIndex] = useState(0);
 
-  const handleBuyNow = () => {
-    onAdd(product, qty);
-
-    setShowCart(true);
-  };
-
   return (
     <div>
       <div className="product-detail-container">
@@ -46,21 +40,12 @@ const ProductDetail = ({ product, products }) => {
 
         <div className="product-detail-desc">
           <h1>{name}</h1>
-          <div className="reviews">
-            <div>
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiOutlineStar />
-            </div>
-            <p>(20)</p>
-          </div>
-          <h4>Details: </h4>
+
+          <h4>商品詳細: </h4>
           <p>{details}</p>
-          <p className="price">${price}</p>
+          <p className="price">{price}円（税込み）</p>
           <div className="quantity">
-            <h3>Quantity:</h3>
+            <h3>数量:</h3>
             <p className="quantity-desc">
               <span className="minus" onClick={decQty}>
                 <AiOutlineMinus />
@@ -77,15 +62,15 @@ const ProductDetail = ({ product, products }) => {
               className="add-to-cart"
               onClick={() => onAdd(product, qty)}
             >
-              Add to Cart
+              カートに入れる
             </button>
-            <button type="button" className="buy-now" onClick={handleBuyNow}>
-              Buy Now
-            </button>
+            {/* <button type="button" className="buy-now" onClick={handleBuyNow}>
+              すぐに購入
+            </button> */}
           </div>
         </div>
       </div>
-      <div className="maylike-products-wrapper">
+      {/* <div className="maylike-products-wrapper">
         <h2>You may also like</h2>
         <div className="marquee">
           <div className="maylike-products-container track">
@@ -94,7 +79,7 @@ const ProductDetail = ({ product, products }) => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -3,7 +3,8 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 import product from "./product";
 import banner from "./banner";
+import mainVisual from "./mainVisual";
 export default createSchema({
   name: "default",
-  types: schemaTypes.concat([product, banner]),
+  types: schemaTypes.concat([product, banner, mainVisual]),
 });
